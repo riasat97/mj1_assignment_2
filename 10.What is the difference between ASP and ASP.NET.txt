@@ -1,0 +1,32 @@
+
+1.ASP is interpreted whereas, ASP.NET is compiled. 
+This implies that since ASP uses VBScript; therefore, when an ASP page is executed, it is interpreted.
+On the other hand, ASP.NET uses .NET languages, such as C# and VB.NET, which are compiled to Microsoft Intermediate Language (MSIL).
+ 
+
+2. Classic ASP uses a technology called ADO to connect and work with databases. ASP.NET uses the ADO.NET technology 
+
+3. ASP has Mixed HTML and  server side scripting where 
+ASP.NET gives you three tire architecture. It allow you to keep your business 
+logic, views everything separate. Meaning that easy to enhance applications.
+
+4. ASP.NET purely object oriented whereas ASP is partially object oriented. 
+
+5. For ASP No in-built support for XML whereas in ASP.NET full XML Support for easy data exchange.
+
+6.In Asp has Very less development and debugging tool available. Meaning that difficult to debug the code.
+Microsoft Visual studio makes your debugging job easier for Asp.net.
+
+7.Error handling is very poor in Asp whereas
+ASP.NET has significantly improved run-time error handling and it also makes use of exception handling using try-catch blocks.
+
+8.ASP has maximum of 4 built in classes like Request, Response, Session and Application 
+whereas The Official Microsoft ASP.NET Site using .NET framework classes which has more than 2000 built-in classes.
+
+9.ASP has no in built validation control. Meaning that validating page is difficult for developers whereas asp.net has
+In built validation controls. It has rich validation set - custom validator, range validator, 
+regular expression, compare and require field validation control which makes your job easier.
+
+10.In the classic ASP if you need to update code on the existing page then it is mandatory to restart the server to get reflect.
+In asp.net , It has state management support.
+

@@ -1,0 +1,33 @@
+Memory management is the main concern for any application whether application is window based or web based. In .Net, 
+CLR has garbage collector that executes as a part of our program and responsible for reclaiming the memory of no longer used objects. 
+Garbage collector also frees the memory for objects that are no longer referenced and keeps the memory for future allocations.
+The primary purpose of garbage collection is to reduce memory leaks.
+
+“Garbage” consists of objects created during a program’s execution on the managed heap 
+that are no longer accessible by the program. Their memory can be reclaimed and reused with no averse effects.
+
+The earlier releases of Microsoft products have used a method like once the process of that object get finished then 
+it will be cleared from the memory. For instance Visual Basic, An object get finishes that work then 
+there we have to define a "nothing" to that object. So, it clears the memory space to the processors.
+
+Microsoft was planning to introduce a method that should automate the cleaning of unused memory space in the heap 
+after the life time of that object. Eventually they have introduced a new technique "Garbage collection".
+Now it handles this object clear in the memory implicitly. It overcomes the existing explicit unused memory space clearance.
+
+GC has changed a bit with the introduction of .net 4.0.In .net 4.0 , the GC.Collect() method contains the following overloaded methods:
+GC.Collect(int)
+GC.Collect(int,GCCollectionMode)
+
+Another new feature is introduced in .net which notifies when GC.Collect()method is invoked and completed successfully.
+
+The .net 4.0 supports a new background garbage collection that replaces the concurrent garbase collection used in earlier
+versions.
+That concurrent GC allocates memory while running and uses current segment (which is 16 MB on a workstation) for that.
+
+In case of background GC,The heap memory is divided into number of generations. Normally it is three generations. 
+The Generation 0 is for short live objects, Generation 1 is for medium live objects which are moved from Generation 0. 
+Generation 3 is mostly stable objects. 
+
+When an object is created then it will allocate the memory space which will be higher. 
+It will be in the Generation 0 and the memory allocation will be continuous without any space 
+between the generations of garbage collectors.

@@ -1,0 +1,119 @@
+static vs final java, 
+both are known access modifiers in Java doing different functionalities.
+
+static: 
+The static keyword in java is used for memory management mainly.
+he static keyword belongs to the class than instance of the class.
+static keyword can be applied to instance variables and methods but not to classes. 
+
+When applied, variables and methods can be called without the help of an object. 
+
+When a method or variable is called without object,encapsulation is not maintained.
+
+static variable:
+Static variables are initialized only once, at the start of the execution. 
+These variables will be initialized first, before the initialization of any instance variables.
+A single copy to be shared by all instances of the class.
+
+static method:
+static method can access static data member and can change the value of it.
+The static method can not use non static data member or call non-static method directly.
+this and super cannot be used in static context.
+
+final: 
+final keyword can be applied to all constructs – variables, methods and classes. 
+When it is applied,
+a variable cannot be reassigned.
+a method cannot be overridden.
+a class cannot be inherited.
+A final variable works like a constant of C/C++. 
+Java does not support const keyword and its place uses final keyword.
+
+Let us explore static vs final java programmatically.
+
+
+I) Usage of static Keyword
+
+Generally, an instance variable or method requires an object to call with. 
+But static variables and methods do not require an object. Observe, the following code.
+
+
+public class Employee
+{
+  int age = 45;	                    // non-static variable
+  static double salary = 8877.66;   // static variable
+
+  public static void display()	    // static method
+  {
+    System.out.println(age);  //Compile Time Error
+    System.out.println("Hello World");
+  }
+
+  public static void main(String args[])
+  {
+    // System.out.println(age);     // raises error, it is non-static and requires object
+    System.out.println(salary);     // works fine as salary is static, object not required
+    display();		            // works fine as display() is static, object not required
+  }
+}
+II) Usage of final Keyword
+
+a) final with variables
+
+public class Bank
+{
+  public static void main(String args[])
+  {
+    int rupees = 500;		    // non-final can be reassigned
+    System.out.println("rupees before reassigned: " + rupees);
+    rupees = 600;		    // non-final
+    System.out.println("rupees after reassigned: " + rupees);
+
+    final double $rate = 61.5;	    // final cannot be reassigned
+    System.out.println("$ Rate is Rs." + $rate);
+    // $rate = 62.8;		    // raises error
+  }
+}
+
+b) final with methods
+
+If the super class does not permit the subclass to override, 
+it simply declares the method as final. The final methods of super class cannot be overridden by subclass.
+
+
+class Manager
+{
+  public final void doSomeThing()   // observe final
+  {
+    System.out.println("Do it right now");
+  }
+}
+public class Worker extends Manager
+{
+  public static void main(String args[])
+  {
+    Worker w1 = new Worker();
+    w1.doSomeThing();
+  }
+}
+c) final with classes
+
+The programmer may not like a class to be inherited by other classes 
+because he would like to allow the accessibility throgh composition not by inheritance.
+
+
+final class Fruit		   // observe, final class
+{
+  String nature = "Seedless";
+}
+public class Mango                 // extends Fruit raises compilation error
+{
+  public static void main(String args[])
+  {
+    Fruit f1 = new Fruit();
+    System.out.println("Fruit type is " + f1.nature);
+  }
+}  
+
+
+

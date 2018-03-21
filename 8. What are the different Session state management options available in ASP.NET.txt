@@ -1,0 +1,26 @@
+Session-State Modes
+
+ASP.NET session state supports several different storage options for session data.
+Each option is identified by a value in the SessionStateMode enumeration. 
+The following list describes the available session state modes:
+
+InProc mode, which stores session state in memory on the Web server. This is the default.
+Pros: least overhead, fastest performance
+Cons: breaks web clusters, restarting IIS loses sessions
+
+StateServer mode, which stores session state in a separate process called the ASP.NET state service.
+Uses HTTP protocol over TCP port. 
+This ensures that session state is preserved if the Web application is restarted and 
+also makes session state available to multiple Web servers.
+Pros: reasonably fast, works with clusters
+Cons: clear text, no authentication, overflows.
+
+SQLServer mode stores session state in a SQL Server database. Uses normal ODBC connection.
+This ensures that session state is preserved if the Web application is restarted
+and also makes session state available to multiple Web servers.
+Pros: reliable, scalable
+Cons: relatively slow, much overhead
+
+Custom mode, which enables you to specify a custom storage provider.
+
+Off mode, which disables session state.

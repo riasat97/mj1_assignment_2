@@ -1,0 +1,46 @@
+3. What is JSON and why would You use it? Describe its structure and give one JSON
+example.
+
+JSON stands for JavaScript Object Notation.
+It has been extended from the JavaScript scripting language.
+JSON is an open standard for exchanging data on the web.
+JSON is easy to read and write.
+JSON is lightweight and language independent.
+JSON supports array, object, string, number,Boolean or null.
+
+Uses of JSON
+
+JSON format is used for serializing and transmitting structured data over network connection.
+
+It is primarily used to transmit data between a server and web applications.
+
+Web services and APIs use JSON format to provide public data.
+
+
+JSON is built on two structures:
+
+A collection of name/value pairs. In various languages, 
+this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
+An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
+
+Example in JSON
+The following example shows how to use JSON to store information related to books based on their topic and edition.
+
+{
+   "book": [
+	
+      {
+         "id":"01",
+         "language": "Java",
+         "edition": "third",
+         "author": "Herbert Schildt"
+      },
+	
+      {
+         "id":"02",
+         "language": "C++",
+         "edition": "second",
+         "author": "E.Balagurusamy"
+      }
+   ]
+}

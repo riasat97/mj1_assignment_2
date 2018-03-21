@@ -1,0 +1,20 @@
+Managed code :
+
+Managed code is executed directly by the CLR(Common Language Runtime) instead of the operating system.
+This code doesn't depend on machine configurations and can be executed on different machines. 
+Managed code also provides platform independence. 
+In .NET Framework Managed Code runs within the .Net Framework’s CLR.
+
+
+As the managed code is first compiled to intermediate language, 
+the CLR’s JIT Compiler takes care of compiling this intermediate language into the architecture specific instructions. 
+the CLR internally uses the Garbage Collector to clear the unused memory.
+It also offers services like run-time type checking, reference checking,memory management, destruction of unused Objects etc.
+
+Unmanaged Code:
+
+Unmanaged code is executed directly by the operating system outside the CLR environment.
+It is directly compiled to native machine code which depends on the machine configuration. 
+This means that if you want to run the same code on different architecture then 
+you will have to recompile the code using that particular architecture. 
+In unmanaged code the memory allocation, type safety, security, etc needs to be taken care of by the developer. 

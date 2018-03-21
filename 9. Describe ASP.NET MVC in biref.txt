@@ -1,0 +1,76 @@
+“M” “V” “C” stands for “MODEL” “VIEW” “CONTROLLER” is a software architecture - the structure of the system -
+that separates business  logic from the rest of the user interface.
+
+ASP.NET MVC is an architecture to develop ASP.NET web applications in a different manner than the traditional ASP.NET web development.
+Web applications developed with ASP.NET MVC are even more SEO (Search Engine) friendly.
+The entire ASP.NET MVC architecture is based on Microsoft .NET Framework 3.5 and in addition uses LINQ to SQL Server.
+
+Model
+MVC model is basically a C# or VB.NET class
+A model is accessible by both controller and view
+A model can be used to pass data from Controller to view
+A view can use model to display data in page.
+
+View
+View is an ASPX page without having a code behind file
+All page specific HTML generation and formatting can be done inside view
+One can use Inline code (server tags ) to develop dynamic pages
+A request to view (ASPX page) can be made only from a controller’s action method
+
+Controller
+Controller is basically a C# or VB.NET class which inherits system.mvc.controller
+Controller is a heart of the entire MVC architecture
+Inside Controller’s class action methods can be implemented which are responsible for responding to browser OR calling views.
+Controller can access and use model class to pass data to views
+Controller uses ViewData to pass any data to view
+
+MVC File Structure & File Naming Standards
+MVC uses a standard directory structure and file naming standards which are a very important part of MVC application development.
+
+Inside the ROOT directory of the application, there must be 3 directories each for model, view and Controller.
+
+Apart from 3 directories, there must have a Global.asax file in root folder, and a web.config like a traditional ASP.NET application.
+
+Root [directory]
+ Controller [directory]
+   Controller CS files
+ Models [directory]
+   Model CS files
+ Views [directory]
+   View aspx/ascx files
+Global.asax
+Web.config
+
+ASP.NET MVC Execution Life Cycle
+Here is how MVC architecture executes the requests to browser and objects interactions with each other.
+
+A step by step process is explained below :
+
+Browser Request (Step 1)
+Browser request happens with a specific URL. Let’s assume that the user enters URL like: [xyz.com]/home/index/
+
+Job of Global.asax – MVC routing (Step 2)
+The specified URL will first get parsed via application_start() method inside Global.asax file. From the requested URL, it will parse the Controller, Action and ID.
+
+So for [xyz.com]/home/index/:
+
+Controller = home
+Action = index()
+ID = empty — we have not specified ID in [xyz.com]/home/index/, so it will consider as empty string
+
+Controller and Action methods (Step 3)
+MVC now finds the home controller class in controller directory. A controller class contains different action methods,
+
+There can be more than one action method, but MVC will only invoke the action method which has been parsed from the URL, its index() in our case.
+
+So something like: homeController.index() will happen inside MVC controller class.
+
+Invoking action method can return plain text string OR rendered HTML by using view.
+
+Call to View (Step 4)
+Invoking view will return view(). A call to view will access the particular ASPX page inside the view directory and 
+generate the rendered HTML from the ASPX and will respond back to the browser.
+
+In our case, controller was home and action was index(). So calling view() will return a rendered HTML from the ASPX page located at /views/home/index.aspx.
+
+This is it, the whole process ends here. So this is how MVC architecture works.
